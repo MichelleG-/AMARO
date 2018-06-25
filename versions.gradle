@@ -1,0 +1,48 @@
+
+ext.deps = [:]
+def versions = [:]
+versions.support = "27.1.1"
+versions.constraint_layout = "1.0.2"
+versions.annotations = "4.4.0"
+versions.springframework = "2.0.0.M3"
+versions.glide = "3.8.0"
+versions.retrofit = "2.3.0"
+versions.multidex = "1.0.1"
+versions.lifecycle = "1.1.1"
+versions.room = "1.0.0"
+
+def deps = [:]
+
+def support = [:]
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+deps.support = support
+
+def annotations = [:]
+annotations.support = "com.android.support:support-annotations:$versions.support"
+annotations.androidannotations = "org.androidannotations:androidannotations:$versions.annotations"
+annotations.api = "org.androidannotations:androidannotations-api:$versions.annotations"
+annotations.springapi = "org.androidannotations:rest-spring-api:$versions.annotations"
+annotations.springframework = "org.springframework.android:spring-android-rest-template:$versions.springframework"
+deps.annotations = annotations
+
+def retrofit = [:]
+retrofit.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.jackson = "com.squareup.retrofit2:converter-jackson:$versions.retrofit"
+retrofit.scalars = "com.squareup.retrofit2:converter-scalars:$versions.retrofit"
+deps.retrofit = retrofit
+
+def lifecycle = [:]
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.lifecycle"
+lifecycle.runtime = "android.arch.persistence.room:runtime:$versions.room"
+lifecycle.livedata = "android.arch.lifecycle:livedata:$versions.lifecycle"
+lifecycle.compiler = "android.arch.persistence.room:compiler:$versions.room"
+deps.lifecycle = lifecycle
+
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.junit = "junit:junit:$versions.junit"
+
+ext.deps = deps
