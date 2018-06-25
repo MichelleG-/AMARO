@@ -14,7 +14,7 @@ public class SplashPresenter extends BasePresenter
 {
     private SplashView splashView;
 
-    public void injectDependecys(SplashView splashView)
+    protected void injectDependecys(SplashView splashView)
     {
         this.splashView = splashView;
     }
@@ -32,7 +32,7 @@ public class SplashPresenter extends BasePresenter
             @Override
             public void run()
             {
-                //Navigator.navigateToProductActivity(splashView.getBaseActivity());
+                Navigator.navigateToProductActivity(splashView.getBaseActivity());
             }
         }, Constant.SPLASH_TIME_OUT);
     }

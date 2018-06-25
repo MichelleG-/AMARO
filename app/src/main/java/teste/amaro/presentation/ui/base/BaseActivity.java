@@ -17,7 +17,7 @@ import teste.amaro.presentation.helper.TransitionHelper;
 @EActivity
 public abstract class BaseActivity extends AppCompatActivity implements BaseView
 {
-    protected BasePresenter basePresenter;
+    private BasePresenter basePresenter;
 
     @AfterViews
     public void injectDependencys()
