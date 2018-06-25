@@ -19,16 +19,14 @@ public class ProductActivity extends BaseActivity implements ProductView
 {
     @AfterViews
     @Override
-    public void inject()
+    public void createActivity()
     {
-        this.setTheme(R.style.AppTheme);
 
     }
 
     @Override
-    public void loadData() {
+    public void loadData()
+    {
 
     }
-
-
 }

@@ -4,4 +4,5 @@ import teste.amaro.presentation.ui.base.BaseView;
 
 public interface SplashView extends BaseView
 {
+    void loadAnimationSplash();
 }

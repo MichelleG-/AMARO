@@ -11,15 +11,20 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".presentation.ui.product.ProductActivity_"
+            android:name=".presentation.ui.splashscreen.SplashActivity_"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.BrandedLaunch">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.ui.product.ProductActivity_"
+            android:label="@string/title_activity_product_detail"
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name=".presentation.ui.productdetail.ProductDetailActivity"
