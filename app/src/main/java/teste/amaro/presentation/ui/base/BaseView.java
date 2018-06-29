@@ -2,6 +2,8 @@ package teste.amaro.presentation.ui.base;
 
 import android.support.v7.widget.Toolbar;
 
+import java.util.List;
+
 public interface BaseView
 {
     void createActivity();
@@ -11,4 +13,5 @@ public interface BaseView
     void showProgress();
     void hideProgress();
     void showError(String message);
+    List<?> getList();
 }

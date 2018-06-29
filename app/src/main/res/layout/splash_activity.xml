@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="140dp"
         android:src="@drawable/logo_amaro"
         android:layout_centerInParent="true"/>

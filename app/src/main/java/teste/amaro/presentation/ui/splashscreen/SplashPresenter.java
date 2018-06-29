@@ -1,5 +1,6 @@
 package teste.amaro.presentation.ui.splashscreen;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 
 import org.androidannotations.annotations.EBean;
@@ -29,6 +30,7 @@ public class SplashPresenter extends BasePresenter
     {
         new Handler().postDelayed(new Runnable()
         {
+            @SuppressLint("NewApi")
             @Override
             public void run()
             {

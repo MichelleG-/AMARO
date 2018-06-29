@@ -1,16 +1,20 @@
 package teste.amaro.presentation.ui.productdetail;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
 
 import teste.amaro.R;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,5 +22,9 @@ public class ProductDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Transition transition;
+
+        transition = TransitionInflater.from(this).inflateTransition(R.transition.slide_from_bottom);
+        getWindow().setEnterTransition(transition);
     }
 }

@@ -1,7 +1,21 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/black</item>
+        <item name="android:theme">@style/ToolbarTheme</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="navigationIcon">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:icon">@null</item>
+        <item name="android:textAlignment" tools:ignore="NewApi">center</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

@@ -9,10 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 
-import teste.amaro.presentation.helper.TransitionHelper;
+import java.util.List;
+
+import teste.amaro.domain.transferobject.ResponseTO;
+import teste.amaro.presentation.ui.helper.TransitionHelper;
 
 @EActivity
 public abstract class BaseActivity extends AppCompatActivity implements BaseView
@@ -61,6 +63,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     }
 
+    public void onFailure(ResponseTO result)
+    {
+        this.hideProgress();
+    }
+
     @Override
     public boolean onSupportNavigateUp()
     {
@@ -69,10 +76,16 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     @SuppressLint("NewApi")
-    @SuppressWarnings("unchecked") void transitionTo(Intent i)
+    @SuppressWarnings("unchecked")
+    public void transitionTo(Intent i)
     {
         final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, true);
         ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pairs);
         startActivity(i, transitionActivityOptions.toBundle());
+    }
+
+    @Override
+    public List<?> getList() {
+        return null;
     }
 }

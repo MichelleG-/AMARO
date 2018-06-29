@@ -1,4 +1,4 @@
-package teste.amaro.presentation.helper;
+package teste.amaro.presentation.ui.helper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

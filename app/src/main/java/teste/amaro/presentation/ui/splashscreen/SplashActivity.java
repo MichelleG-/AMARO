@@ -10,6 +10,8 @@ import org.androidannotations.annotations.Fullscreen;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.AnimationRes;
 
+import java.util.List;
+
 import teste.amaro.R;
 import teste.amaro.presentation.ui.base.BaseActivity;
 

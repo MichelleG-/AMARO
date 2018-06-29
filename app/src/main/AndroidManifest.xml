@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="teste.amaro">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,6 +33,10 @@
             android:name=".presentation.ui.productdetail.ProductDetailActivity"
             android:label="@string/title_activity_product_detail"
             android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name=".presentation.ui.helper.CustomCachingGlideModuleHelper"
+            android:value="AppGlideModule" />
     </application>
 
 </manifest>
