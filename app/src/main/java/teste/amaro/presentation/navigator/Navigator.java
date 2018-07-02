@@ -9,6 +9,7 @@ import teste.amaro.presentation.constant.IntentConstant;
 import teste.amaro.presentation.ui.base.BaseActivity;
 import teste.amaro.presentation.ui.product.ProductActivity_;
 import teste.amaro.presentation.ui.productdetail.ProductDetailActivity;
+import teste.amaro.presentation.ui.productdetail.ProductDetailActivity_;
 
 /**
  * Class used to navigate through the application.
@@ -27,7 +28,7 @@ public class Navigator
     {
         Intent intent;
 
-        intent = new Intent(baseActivity, ProductDetailActivity.class);
+        intent = new Intent(baseActivity, ProductDetailActivity_.class);
         intent.putExtra(IntentConstant.PRODUCT_DETAIL, productDetailMapper);
         baseActivity.transitionTo(intent);
     }

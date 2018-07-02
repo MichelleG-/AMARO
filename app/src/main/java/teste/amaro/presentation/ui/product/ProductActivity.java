@@ -58,7 +58,6 @@ public class ProductActivity extends BaseActivity implements ProductView, Callba
         layoutManager = new GridLayoutManager(this.getBaseActivity(), 2);
         lstProduct.setLayoutManager(layoutManager);
         lstProduct.setItemAnimator(new DefaultItemAnimator());
-        lstProduct.addItemDecoration(new DividerItemDecoration(this.getBaseActivity(), DividerItemDecoration.VERTICAL));
         lstProduct.setAdapter(productAdapter);
     }
 

@@ -1,5 +1,6 @@
 package teste.amaro.presentation.ui.helper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
@@ -18,6 +19,7 @@ public class CustomCachingGlideModuleHelper extends AppGlideModule
 {
     private static final long TEN_MB_IN_BYTES = 1024 * 1024 * 10;
 
+    @SuppressLint("NewApi")
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
 

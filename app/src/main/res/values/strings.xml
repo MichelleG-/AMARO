@@ -3,7 +3,17 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
+
+
+    <string name="or">ou %s</string>
+    <string name="price_promotional">Preço promocional: DE %s</string>
+    <string name="price_actual">POR %s</string>
+    <string name="color">COR: %s </string>
     <string name="large_text">
+
+
+
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."

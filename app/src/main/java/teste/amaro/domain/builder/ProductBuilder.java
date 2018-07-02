@@ -70,10 +70,11 @@ public class ProductBuilder implements BuilderMapper<ResponseTO, ProductMapper>
                 image = product.getImage() != null ? product.getImage() : Constant.EMPTY_FIELD;
 
 
-                if(product.getSizes() != null && product.getSizes().size() > 0)
+                if(product.getSizes() != null)
                 {
                     listSizes = new ArrayList<>();
 
+                    iContSizes = 0;
                     while (iContSizes < product.getSizes().size())
                     {
                         productSizes = product.getSizes().get(iContSizes);

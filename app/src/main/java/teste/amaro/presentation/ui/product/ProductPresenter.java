@@ -19,6 +19,7 @@ public class ProductPresenter extends BasePresenter
     private ProductView productView;
     private List<ProductDetailMapper> listProducts;
     private List<ProductDetailMapper> listProductsSale;
+
     protected void injectDependecys(ProductView productView)
     {
         this.productView = productView;

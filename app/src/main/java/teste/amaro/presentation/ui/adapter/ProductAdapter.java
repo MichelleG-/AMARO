@@ -32,6 +32,6 @@ public class ProductAdapter extends RecyclerViewAdapterBase<ProductDetailMapper,
 
         productDetailMapper = (ProductDetailMapper) this.items.get(position);
         ProductHelper.bindFieldsListProducts(this.baseView.getBaseActivity(), holder, productDetailMapper);
-        ProductHelper.setEventClickItem(this.baseView, holder, null);
+        ProductHelper.setEventClickItem(this.baseView, holder, productDetailMapper);
     }
 }

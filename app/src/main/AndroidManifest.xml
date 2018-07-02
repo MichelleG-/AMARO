@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name="teste.amaro.AppApplication"
         android:theme="@style/AppTheme">
 
         <activity
@@ -30,7 +31,7 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".presentation.ui.productdetail.ProductDetailActivity"
+            android:name=".presentation.ui.productdetail.ProductDetailActivity_"
             android:label="@string/title_activity_product_detail"
             android:theme="@style/AppTheme" />
 

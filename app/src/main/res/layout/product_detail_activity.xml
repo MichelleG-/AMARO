@@ -1,37 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
-    android:background="@color/colorPrimary"
-    tools:context=".presentation.ui.productdetail.ProductDetailActivity">
+    android:background="@color/gray_light">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content"
         android:theme="@style/AppTheme">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+        <include
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:layout_height="wrap_content"
+            layout="@layout/toolbar" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProduct"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme" />
+                android:layout_height="wrap_content"
+                android:minHeight="300dp"
+                android:padding="15dp"/>
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+
+            <TextView
+                android:id="@+id/lblDiscount"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/round_yellow_discount"
+                android:gravity="center"
+                android:text="10%"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+        </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lstProductSizes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/lblProductName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/lstProductSizes"
+            tools:text="Tênis Nike Masculino" />
+
+        <View
+            android:id="@+id/viewName"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/lblProductName"
+            android:background="@color/medium_grey" />
+
+        <TextView
+            android:id="@+id/lblPricePromotional"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@color/medium_grey"
+            android:textSize="12dp"
+            android:layout_below="@+id/viewName"
+            android:textStyle="bold"
+            tools:text="@string/price_promotional" />
+
+        <TextView
+            android:id="@+id/lblPrice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_below="@id/lblPricePromotional"
+            tools:text="R$89,00" />
+
+        <TextView
+            android:id="@+id/lblInstallments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@color/medium_grey"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/lblPrice"
+            tools:text="ou 10x R$34,00" />
+
+        <View
+            android:id="@+id/viewInstallments"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/lblInstallments"
+            android:background="@color/medium_grey" />
+
+
+        <TextView
+            android:id="@+id/lblColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@color/medium_grey"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_below="@id/viewInstallments"
+            tools:text="Cor: Preto" />
+
+        <ImageView
+            android:id="@+id/imgStatus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/sale"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:layout_alignBottom="@id/lblColor"/>
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

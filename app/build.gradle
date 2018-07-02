@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -56,12 +57,6 @@ dependencies {
     implementation deps.retrofit.retrofit
     implementation deps.retrofit.jackson
     implementation deps.retrofit.scalars
-
-    // Lifecycle
-    implementation deps.lifecycle.extensions
-    annotationProcessor deps.lifecycle.runtime
-    implementation deps.lifecycle.compiler
-    implementation deps.lifecycle.livedata
 
     // Outros
     implementation deps.glide
