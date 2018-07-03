@@ -39,6 +39,8 @@ public class ProductBuilder implements BuilderMapper<ResponseTO, ProductMapper>
         int iCont = 0;
         int iContSizes = 0;
 
+        double regularPriceNumber;
+
         try
         {
             if(responseTO == null)
@@ -70,6 +72,9 @@ public class ProductBuilder implements BuilderMapper<ResponseTO, ProductMapper>
                 image = product.getImage() != null ? product.getImage() : Constant.EMPTY_FIELD;
 
 
+                String teste = regularPrice.replace("R$ ", "").replace(",", ".");
+                regularPriceNumber = Double.parseDouble(teste);
+
                 if(product.getSizes() != null)
                 {
                     listSizes = new ArrayList<>();
@@ -88,13 +93,13 @@ public class ProductBuilder implements BuilderMapper<ResponseTO, ProductMapper>
 
                 listProductDetail.add(
                         new ProductDetailMapper(name, style, color, product.isOnSale(), regularPrice,
-                                actualPrice, discountPercentage, installments, image, listSizes));
+                                actualPrice, discountPercentage, installments, image, listSizes, regularPriceNumber));
 
                 if(product.isOnSale())
                 {
                     listProductDetailOnSale.add(
                             new ProductDetailMapper(name, style, color, product.isOnSale(), regularPrice,
-                                    actualPrice, discountPercentage, installments, image, listSizes));
+                                    actualPrice, discountPercentage, installments, image, listSizes, regularPriceNumber));
                 }
 
                 iCont++;

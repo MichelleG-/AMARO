@@ -20,7 +20,7 @@ public class ProductHelper
         LoadImageHelper.load(context, productDetailMapper.getImage(), holder.getView().imgProduct);
 
         holder.getView().lblProductName.setText(productDetailMapper.getName());
-        holder.getView().lblPrice.setText(productDetailMapper.getActualPrice());
+        holder.getView().lblPrice.setText(productDetailMapper.getRegularPrice());
 
         if(productDetailMapper.getDiscountPercentage().isEmpty())
         {

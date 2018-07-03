@@ -14,8 +14,8 @@ public class ProductDetailMapper implements Mapper
     private String installments;
     private String image;
     private List<ProductSizeMapper> producSizes;
-
-    public ProductDetailMapper(String name, String style, String color, boolean onSale, String regularPrice, String actualPrice, String discountPercentage, String installments, String image, List<ProductSizeMapper> producSizes)
+    private Double regularPriceNumber;
+    public ProductDetailMapper(String name, String style, String color, boolean onSale, String regularPrice, String actualPrice, String discountPercentage, String installments, String image, List<ProductSizeMapper> producSizes, Double regularPriceNumber)
     {
         this.name = name;
         this.style = style;
@@ -27,6 +27,7 @@ public class ProductDetailMapper implements Mapper
         this.installments = installments;
         this.image = image;
         this.producSizes = producSizes;
+        this.regularPriceNumber = regularPriceNumber;
     }
 
     public String getName() {
@@ -67,5 +68,9 @@ public class ProductDetailMapper implements Mapper
 
     public List<ProductSizeMapper> getProducSizes() {
         return producSizes;
+    }
+
+    public Double getRegularPriceNumber() {
+        return regularPriceNumber;
     }
 }

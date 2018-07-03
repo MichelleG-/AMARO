@@ -9,7 +9,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        app:elevation="0dp">
 
         <include
             android:layout_width="match_parent"
@@ -19,31 +20,30 @@
         <LinearLayout
             android:id="@+id/lnlFilters"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnFilter"
                 android:layout_width="0dp"
                 android:layout_weight="50"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:padding="@dimen/padding_15"
                 android:clickable="true"
-                android:background="@color/cardview_shadow_start_color"
+                android:background="@drawable/round_button_gray"
                 android:drawableLeft="@drawable/filter"
-                android:text="Filtrar"
-                />
+                android:text="@string/title_filter" />
 
             <Button
+                android:id="@+id/btnOrder"
                 android:layout_width="0dp"
                 android:layout_weight="50"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:padding="@dimen/padding_15"
                 android:clickable="true"
-                android:drawablePadding="10dp"
-                android:background="@color/cardview_shadow_start_color"
+                android:background="@drawable/round_button_gray"
                 android:drawableLeft="@drawable/order"
-                android:text="Ordenar"
-                />
+                android:text="@string/title_order" />
         </LinearLayout>
     </android.support.design.widget.AppBarLayout>
 

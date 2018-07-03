@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -65,5 +66,17 @@ public class ProductActivity extends BaseActivity implements ProductView, Callba
     public void onSuccess(ResponseTO result)
     {
         this.productPresenter.onSuccess(result);
+    }
+
+    @Click(R.id.btnFilter)
+    public void clickFilter()
+    {
+        this.productPresenter.dialogFilter();
+    }
+
+    @Click(R.id.btnOrder)
+    public void clickOrder()
+    {
+        this.productPresenter.dialogOrder();
     }
 }

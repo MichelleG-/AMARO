@@ -6,4 +6,15 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="card_radius">3dp</dimen>
+
+    <dimen name="image_product_size_card">90dp</dimen>
+
+    <dimen name="text_font_14">14dp</dimen>
+
+
+
 </resources>
