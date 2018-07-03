@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/lblSize"
@@ -10,11 +9,10 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:maxLines="1"
-        android:padding="15dp"
+        android:padding="@dimen/padding_15"
         android:textColor="@color/medium_grey"
-        android:textSize="18dp"
+        android:textSize="@dimen/text_font_18"
         android:textStyle="bold"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/lblProductName"
-        tools:text="P" />
+        android:layout_alignTop="@id/lblProductName" />
 </FrameLayout>

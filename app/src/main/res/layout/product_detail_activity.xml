@@ -27,36 +27,57 @@
                 android:id="@+id/imgProduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="300dp"
-                android:padding="15dp"/>
+                android:minHeight="@dimen/image_product_detail_size_card"
+                android:padding="@dimen/padding_15"/>
 
 
             <TextView
                 android:id="@+id/lblDiscount"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:background="@drawable/round_yellow_discount"
                 android:gravity="center"
-                android:text="10%"
-                android:layout_margin="20dp"
+                android:layout_margin="@dimen/margin_20"
                 android:textColor="@color/white"
-                android:textSize="10dp" />
+                android:textSize="@dimen/text_font_10" />
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/padding_10"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/lblSize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@color/medium_grey"
+            android:textSize="@dimen/text_font_12"
+            android:textStyle="bold"
+            android:text="@string/sizes"
+            android:layout_alignParentTop="true"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/lstProductSizes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true" />
+            android:layout_below="@id/lblSize"/>
+
+        <View
+            android:id="@+id/viewSizes"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:alpha="0.6"
+            android:layout_below="@id/lstProductSizes"
+            android:background="@color/medium_grey" />
 
         <TextView
             android:id="@+id/lblProductName"
@@ -65,20 +86,10 @@
             android:gravity="left"
             android:maxLines="1"
             android:textColor="@android:color/black"
-            android:textSize="16dp"
+            android:textSize="@dimen/text_font_16"
             android:textStyle="bold"
-            android:layout_marginBottom="5dp"
-            android:layout_below="@id/lstProductSizes"
-            tools:text="Tênis Nike Masculino" />
-
-        <View
-            android:id="@+id/viewName"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@id/lblProductName"
-            android:background="@color/medium_grey" />
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_below="@id/viewSizes" />
 
         <TextView
             android:id="@+id/lblPricePromotional"
@@ -87,8 +98,8 @@
             android:gravity="left"
             android:maxLines="1"
             android:textColor="@color/medium_grey"
-            android:textSize="12dp"
-            android:layout_below="@+id/viewName"
+            android:textSize="@dimen/font_12"
+            android:layout_below="@+id/lblProductName"
             android:textStyle="bold"
             tools:text="@string/price_promotional" />
 
@@ -99,10 +110,9 @@
             android:gravity="left"
             android:maxLines="1"
             android:textColor="@android:color/black"
-            android:textSize="22dp"
+            android:textSize="@dimen/text_font_22"
             android:textStyle="bold"
-            android:layout_below="@id/lblPricePromotional"
-            tools:text="R$89,00" />
+            android:layout_below="@id/lblPricePromotional" />
 
         <TextView
             android:id="@+id/lblInstallments"
@@ -110,18 +120,18 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:maxLines="1"
-            android:textColor="@color/medium_grey"
+            android:textColor="@color/black"
             android:textSize="12dp"
             android:textStyle="bold"
-            android:layout_below="@+id/lblPrice"
-            tools:text="ou 10x R$34,00" />
+            android:layout_below="@+id/lblPrice" />
 
         <View
             android:id="@+id/viewInstallments"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="@dimen/view_height"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:alpha="0.6"
             android:layout_below="@id/lblInstallments"
             android:background="@color/medium_grey" />
 
@@ -132,11 +142,10 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:maxLines="1"
-            android:textColor="@color/medium_grey"
-            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_12"
             android:textStyle="bold"
-            android:layout_below="@id/viewInstallments"
-            tools:text="Cor: Preto" />
+            android:layout_below="@id/viewInstallments" />
 
         <ImageView
             android:id="@+id/imgStatus"
