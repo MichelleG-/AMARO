@@ -61,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void hideProgress()
     {
-        this.loadingFragment.dismiss();
+        this.basePresenter.hideLoading(this.loadingFragment);
     }
 
     @Override
@@ -92,12 +92,12 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void errorHandler(Throwable throwable, ResponseTO responseTO)
     {
+        this.hideProgress();
         this.basePresenter.errorHandler(throwable, responseTO);
     }
 
     public void onFailure(ResponseTO result)
     {
-        this.hideProgress();
         this.errorHandler(result);
     }
 

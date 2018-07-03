@@ -27,4 +27,12 @@ public class BasePresenter
             this.baseView.showError(this.baseView.getBaseActivity().getString(ErrorEnum.ERROR_DEFAULT.getId()));
         }
     }
+
+    public void hideLoading(LoadingFragment loadingFragment)
+    {
+        if(loadingFragment != null)
+        {
+            loadingFragment.dismiss();
+        }
+    }
 }

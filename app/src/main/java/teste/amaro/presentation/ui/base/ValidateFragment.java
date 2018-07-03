@@ -32,6 +32,6 @@ public class ValidateFragment extends DialogFragment
     @Click(R.id.btnClose)
     public void clickClose()
     {
-        this.getActivity().finish();
+        this.dismiss();
     }
 }
