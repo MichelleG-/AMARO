@@ -15,7 +15,10 @@
     <string name="sizes">Disponivéis nos tamanhos: </string>
     <string name="title_filter">Filtrar</string>
     <string name="title_order">Ordenar</string>
-
+    <string name="close">Fechar</string>
+    <string name="error_default" translatable="false">Sistema temporariamente indisponível, por favor tente mais tarde.</string>
+    <string name="error_without_connection" translatable="false">Ops! Verifique a sua conexão com a internet.</string>
+    <string name="error_product" translatable="false">Não foi possivel carregar os produtos. Tente novamente!</string>
 
     <string-array name="dialog_filter">
         <item>Sale</item>

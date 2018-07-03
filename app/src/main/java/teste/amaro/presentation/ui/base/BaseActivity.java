@@ -2,6 +2,7 @@ package teste.amaro.presentation.ui.base;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +15,15 @@ import org.androidannotations.annotations.EActivity;
 import java.util.List;
 
 import teste.amaro.domain.transferobject.ResponseTO;
+import teste.amaro.presentation.constant.Constant;
+import teste.amaro.presentation.constant.IntentConstant;
 import teste.amaro.presentation.ui.helper.TransitionHelper;
 
 @EActivity
 public abstract class BaseActivity extends AppCompatActivity implements BaseView
 {
     private BasePresenter basePresenter;
+    private LoadingFragment loadingFragment;
 
     @AfterViews
     public void injectDependencys()
@@ -39,7 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void loadData()
     {
-
     }
 
     @Override
@@ -49,23 +52,53 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     @Override
-    public void showProgress() {
-
+    public void showProgress()
+    {
+        this.loadingFragment = new LoadingFragment();
+        this.loadingFragment.show(getSupportFragmentManager(), Constant.LOADING_FRAGMENT);
     }
 
     @Override
-    public void hideProgress() {
-
+    public void hideProgress()
+    {
+        this.loadingFragment.dismiss();
     }
 
     @Override
-    public void showError(String message) {
+    public void showError(String message)
+    {
+        Bundle bundle;
 
+        bundle = new Bundle();
+        bundle.putString(IntentConstant.MESSAGE_VALIDATE,  message);
+
+        ValidateFragment_.builder().arg(bundle)
+                .build()
+                .show(this.getSupportFragmentManager(), Constant.VALIDATE_POPUP_FRAGMENT);
+    }
+
+    @Override
+    public void errorHandler(Throwable throwable)
+    {
+        this.errorHandler(throwable, null);
+    }
+
+    @Override
+    public void errorHandler(ResponseTO responseTO)
+    {
+        this.errorHandler(null, responseTO);
+    }
+
+    @Override
+    public void errorHandler(Throwable throwable, ResponseTO responseTO)
+    {
+        this.basePresenter.errorHandler(throwable, responseTO);
     }
 
     public void onFailure(ResponseTO result)
     {
         this.hideProgress();
+        this.errorHandler(result);
     }
 
     @Override

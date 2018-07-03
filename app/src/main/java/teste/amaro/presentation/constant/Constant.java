@@ -10,4 +10,7 @@ public interface Constant
 
     int ORDER_GROWING = 0;
     int ORDER_DECREASING = 1;
+
+    String VALIDATE_POPUP_FRAGMENT = "VALIDATE_POPUP_FRAGMENT";
+    String LOADING_FRAGMENT = "LOADING_FRAGMENT";
 }

@@ -4,10 +4,10 @@ import teste.amaro.R;
 
 public enum ErrorEnum
 {
-    ERROR_DEFAULT(0),
-    ERROR_PRODUCT(0),
+    ERROR_DEFAULT(R.string.error_default),
+    ERROR_PRODUCT(R.string.error_product),
     ERROR_PRODUCT_NO_PRODUCT(0),
-    ERROR_WITHOUT_CONNECTION(0);
+    ERROR_WITHOUT_CONNECTION(R.string.error_without_connection);
 
     private int id;
 

@@ -43,15 +43,16 @@ public class ProductPresenter extends BasePresenter
     {
         try
         {
+            this.productView.showProgress();
             new ProductServiceImpl().getListProducts(this.productView.getBaseActivity(), callbackSync);
         }
         catch (ServiceBusinessException serviceException)
         {
-            serviceException.printStackTrace();
+            this.productView.errorHandler(serviceException);
         }
         catch (Exception exception)
         {
-            exception.printStackTrace();
+            this.productView.errorHandler(exception);
         }
     }
 
@@ -68,14 +69,16 @@ public class ProductPresenter extends BasePresenter
                 this.saveListProductsSale(productMapper.getListProductsOnSale());
                 this.productView.loadListProduct();
             }
+
+            this.productView.hideProgress();
         }
         catch (SystemException systemException)
         {
-            systemException.printStackTrace();
+            this.productView.errorHandler(systemException);
         }
         catch (Exception exception)
         {
-            exception.printStackTrace();
+            this.productView.errorHandler(exception);
         }
     }
 
